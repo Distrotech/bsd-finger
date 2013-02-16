@@ -48,7 +48,7 @@ char lprint_rcsid[] =
 #include <sys/types.h>
 #include <sys/file.h>
 #include <sys/stat.h>
-#include <sys/time.h>
+#include <time.h>
 #include "finger.h"
 
 static void lprint(PERSON *pn);

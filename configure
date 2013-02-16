@@ -55,7 +55,7 @@ fi
 
 BINDIR="$EXECPREFIX/bin"
 SBINDIR="$EXECPREFIX/sbin"
-MANDIR="$PREFIX/man"
+MANDIR="$PREFIX/share/man"
 
 echo "Directories: $BINDIR $SBINDIR $MANDIR "
 
