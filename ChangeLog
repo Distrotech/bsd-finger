@@ -1,0 +1,133 @@
+22-Jul-2000:
+	Document ~/.pgpkey. (Herbert Xu, herbert@gondor.apana.org.au)
+
+18-Dec-1999:
+	Add support for ~/.nofinger files.
+
+14-Dec-1999:
+	bsd-finger-0.16 is released.
+
+12-Dec-1999:
+	Withdrew -R option; finger can figure out on its own if it needs
+	  to emit CRs.
+	Also, make printing of pts/* ttys work right.
+
+14-Sep-1999:
+	Rewrote output handling of finger to deal with 8-bit characters 
+	  correctly. Also fixed what I think was some uninitialized data
+	  displaying ":0" utmp entries.
+	Backed out patch 1.15 of finger/util.c because it was completely
+	  wrong. Fixed gecos processing _again_.
+	Added -R option to finger that causes it to emit CR before every
+	  LF. Changed fingerd to use it. This means fingerd no longer 
+	  needs to fork.
+
+1-Aug-1999:
+	Complete y2k and y2038 audit.
+
+31-Jul-1999:
+	Redid makefiles/config stuff for new confgen version.
+
+23-Sep-1997:
+	fingerd should now refuse to run as root and bail if it can't find
+	"nobody". 
+
+22-Sep-1997:
+	Fix finger to not destroy gethostbyname() results with
+	getservbyname(). 
+
+02-Aug-1997:
+	Fix fingerd to complain if it can't switch from root.
+
+12-Jun-1997:
+	bsd-finger-0.10 released.
+
+08-Jun-1997:
+	More adjustments for glibc.
+
+13-May-1997:
+	Do dynamic column width formatting in short format printout. (HJ Lu)
+
+05-Apr-1997:
+	Added configure script to generate MCONFIG.
+	glibc fixes from HJ Lu.
+	Display .pgpkey file in finger (Edward S. Marshall,
+	  emarshal@common.net)
+	Better utmp handling.
+
+08-Mar-1997:
+	Split from full NetKit package. 
+	Generated this change log from NetKit's.
+
+07-Mar-1997:
+	Fixed finger to reject .plans that aren't regular files. (Thomas
+	  Roessler, roessler@sobolev.rhein.de)
+
+01-Feb-1997:
+	Fixed finger's timezone handling. Now gets daylight time right.
+
+29-Dec-1996
+	NetKit-0.09 released.
+	Fix doc bugs in fingerd.
+	Fingerd accepts -p as equivalent to -L for compatibility with
+	  "fingerd-extlog.tar.gz".
+	Assorted alpha/glibc patches. (Erik Troan, ewt@redhat.com)
+	Assorted bug fixes from Debian. (Peter Tobias, 
+	  tobias@et-inf.fho-emden.de)
+	Hardened programs against DNS h_length spoofing attacks.
+	Use inet_aton() everywhere instead of inet_addr().
+	Fixed bug in finger's processing of &'s in full names that probably has
+	  security implications.
+	Finger doesn't follow symlinks now.
+
+22-Aug-1996
+	NetKit-B-0.08 released.
+	fingerd uses fork instead of system for running uptime (with -w flag).
+	fingerd supports -L flag to run alternate finger client.
+	(almost) everything now compiles with lots of warnings turned on.
+	fingerd now accepts a new -u flag to reject "finger @host" queries.
+	fix bug in finger that prevented matching full names
+	  (fix from James Jones <james@richland.cc.il.us>.)
+
+25-Jul-1996
+	NetKit-B-0.07A released.
+
+23-Jul-1996
+	NetKit-B-0.07 released.
+	Integrated a collection of patches that had been lurking on the net,
+	  including the 256-ptys support for telnetd and passive mode ftp.
+	Major security fixes, including to fingerd, lpr, rlogin, rsh, talkd, 
+	  and telnetd. Do *not* use the sliplogin from earlier versions of this
+	  package, either.
+	Several of the daemons support better logging.
+	Much of the code builds without libbsd.a or bsd includes.
+	Massive code cleanup. Almost everything compiles clean with gcc
+	  -Wall now. rusers and rusersd do not; patches to rpcgen to fix
+	  this would be appreciated if anyone feels like it.
+	New maintainer:  David A. Holland, dholland@hcs.harvard.edu
+
+date not known
+	NetKit-B-0.06 released.
+	Added a missing argument in a printf to the finger source
+	  code. Phil Edge
+	"finger -l" prints the standard timezone when it should print the
+	  daylight savings timezone. tzname[0] is standard timezone and
+	  tzname[1] is daylight savings timezone.  This patch is from Phil
+	  Edge. He wasn't too sure about this patch, and I haven't looked
+	  into it. Anyone who really knows about this stuff? Look into
+	  lprint.c in the finger source. I changed all "1 - daylight" into
+	  "daylight"... You could also verify all Linux-specific changes
+	  to timezone things. Other parts look also like duplicate work.
+	  (Maybe even wrong...)
+
+date not known
+	NetKit-B-0.05 released.
+	Fixed finger/util.c to cope with XDM login entry in utmp (Leonard
+	  Zubkoff)
+
+date not known
+	NetKit-B-0.04 released.
+
+date not known
+	NetKit-B-0.03 released.
+	Fixed fingerd to not use 'getdomainname' to get the FQDN.

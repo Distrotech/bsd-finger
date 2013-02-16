@@ -1,0 +1,22 @@
+# Dirs
+INSTALLROOT
+BINDIR
+SBINDIR
+MANDIR
+
+# Modes
+BINMODE
+DAEMONMODE
+MANMODE
+
+# Compiling
+ALLWARNINGS
+CC
+CFLAGS
+LDFLAGS
+LIBS
+
+# Features
+FN(snprintf)
+TYPE(socklen_t)
+
