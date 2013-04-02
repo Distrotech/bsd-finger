@@ -10,7 +10,7 @@ fingerd.o: pathnames.h ../version.h
 
 install: fingerd
 	install -d $(INSTALLROOT)$(SBINDIR) $(INSTALLROOT)$(MANDIR)/man8
-	install -s -m$(DAEMONMODE) fingerd $(INSTALLROOT)$(SBINDIR)/in.fingerd
+	install -m$(DAEMONMODE) fingerd $(INSTALLROOT)$(SBINDIR)/in.fingerd
 	install -m$(MANMODE) fingerd.8 $(INSTALLROOT)$(MANDIR)/man8/in.fingerd.8
 	ln -sf in.fingerd.8 $(INSTALLROOT)$(MANDIR)/man8/fingerd.8
 

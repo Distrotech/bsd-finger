@@ -11,7 +11,7 @@ finger.o: ../version.h
 
 install: finger
 	install -d $(INSTALLROOT)$(BINDIR) $(INSTALLROOT)$(MANDIR)/man1
-	install -s -m$(BINMODE) finger $(INSTALLROOT)$(BINDIR)
+	install -m$(BINMODE) finger $(INSTALLROOT)$(BINDIR)
 	install -m$(MANMODE) finger.1 $(INSTALLROOT)$(MANDIR)/man1
 
 clean:
